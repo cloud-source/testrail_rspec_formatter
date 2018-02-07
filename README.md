@@ -58,6 +58,7 @@ Configure it via `ENV` variables or `RSpec.configure` (or with a mix of them).
 ### Via ENV
 
 * TESTRAIL_FORMATTER_PROJECT_ID: (required) the id of the TestRail project
+* TESTRAIL_FORMATTER_SUITE_ID: (required to create test runs) the id of the TestRail test suite
 * TESTRAIL_FORMATTER_RUN_NAME: (required) the name of the run to target
 * TESTRAIL_FORMATTER_URL: (required) the URL to target (`"https://your-user.testrail.com"``)
 * TESTRAIL_FORMATTER_USER: (required) your TestRail user
@@ -69,6 +70,7 @@ Configure it via `ENV` variables or `RSpec.configure` (or with a mix of them).
 ```ruby
 RSpec.configure do |config|
   config.testrail_formatter_options[:project_id] = ... # (required) the id of the TestRail project
+  config.testrail_formatter_options[:suite_id] = ... # (required to create test runs) the id of the TestRail test suite
   config.testrail_formatter_options[:run_name]   = ... # (required) the name of the run to target
   config.testrail_formatter_options[:url]        = ... # (required) the URL to target (`"https://your-user.testrail.com"``)
   config.testrail_formatter_options[:user]       = ... # (required) your TestRail user

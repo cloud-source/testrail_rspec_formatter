@@ -72,8 +72,10 @@ module TestrailRspecFormatter
         testrail_log "found run with name #{run_name.inspect}, id is #{run["id"]}"
       else
         testrail_log "no run found with name #{run_name.inspect}, creating one..."
+        suite_id = testrail_config_value(:suite_id, "TESTRAIL_FORMATTER_SUITE_ID")
         case_ids = results.map { |result| result[:case_id] }
         run = client.post("add_run/#{project_id}", {
+          suite_id: suite_id,
           name: run_name,
           include_all: false,
           case_ids: case_ids,
